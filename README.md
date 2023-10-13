@@ -24,7 +24,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/screenshot.jpg)
+![screenshot](https://github.com/MekanEs/time-tracking-dashboard/assets/116496974/12692682-b452-454b-ac79-b7ed1d530bec)
+
 
 ### Links
 
