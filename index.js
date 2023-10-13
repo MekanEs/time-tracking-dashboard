@@ -9,8 +9,14 @@ const viewButtons = document.querySelectorAll('.dashboard__selector__item');
 const changeActiveButton = () => {
   viewButtons.forEach((button) => {
     button.classList.remove('dashboard__selector__item--active');
-    if (button.innerText === localStorage.getItem('currentView')) {
-      button.classList.add('dashboard__selector__item--active');
+    if (localStorage.getItem('currentView') !== null) {
+      if (button.innerText === localStorage.getItem('currentView')) {
+        button.classList.add('dashboard__selector__item--active');
+      }
+    } else {
+      if (button.innerText === 'Weekly') {
+        button.classList.add('dashboard__selector__item--active');
+      }
     }
   });
 };
@@ -22,13 +28,9 @@ const nameMap = {
 };
 
 class DashBoard {
-  constructor(
-    data,
-    view = localStorage.getItem('currentView') || 'Weekly',
-    container = '.dashboard__content',
-  ) {
+  constructor(data, view = localStorage.getItem('currentView'), container = '.dashboard__content') {
     this.data = data;
-    this.view = view;
+    this.view = view || 'Weekly';
     this.container = document.querySelector(container);
 
     this.createMarkup();
