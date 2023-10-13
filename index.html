@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/timer.svg" />
+
+    <title>Time tracking dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="dashboard">
+      <div class="dashboard__content">
+        <div class="dashboard__person">
+          <div class="info">
+            <img class="info__photo" src="./images/image-jeremy.png" alt="person photo" />
+            <div class="info__text">
+              <div class="info__subtitle">Report for</div>
+              <h3 class="info__title">Jeremy Robson</h3>
+            </div>
+          </div>
+          <div class="dashboard__selector">
+            <div class="dashboard__selector__item">Daily</div>
+            <div class="dashboard__selector__item dashboard__selector__item--active">Weekly</div>
+            <div class="dashboard__selector__item">Monthly</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Mekan Esenjanow</a>.
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

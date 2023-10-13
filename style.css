@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-blue-100: hsl(236, 100%, 87%);
+  --color-blue-200: hsl(195, 74%, 62%);
+  --color-blue-300: hsl(235, 45%, 61%);
+  --color-blue-400: hsl(246, 80%, 60%);
+  --color-blue-500: hsl(235, 46%, 20%);
+  --color-blue-600: hsl(226, 43%, 10%);
+  --color-red-100: hsl(15, 100%, 70%);
+  --color-red-200: hsl(348, 100%, 68%);
+  --color-green-100: hsl(145, 58%, 55%);
+  --color-violet-100: hsl(264, 64%, 52%);
+  --color-orange-100: hsl(43, 84%, 65%);
+
+  --fs-base: 18px;
+  --font-family: Rubik, sans-serif;
+
+  --border-def: 1rem;
+  --border-full: 50%;
+  --card-padding-def: 1rem 1.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-blue-600);
+  font-family: var(--font-family);
+  color: white;
+  font-size: var(--fs-base);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+}
+
+.dashboard__content {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 90%;
+  justify-content: center;
+  grid-template-columns: repeat(1, minmax(300px, 330px));
+}
+
+.dashboard__person {
+  background-color: var(--color-blue-500);
+  border-radius: var(--border-def);
+}
+
+.info {
+  background-color: var(--color-blue-400);
+  display: flex;
+  padding: var(--card-padding-def);
+  border-radius: var(--border-def);
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.info__photo {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border-full);
+  border: 1px solid white;
+}
+
+.info__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info__subtitle {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.info__title {
+  font-weight: 300;
+  margin: 0;
+}
+
+.dashboard__selector {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--card-padding-def);
+  font-size: 14px;
+}
+
+.dashboard__selector__item {
+  color: var(--color-blue-300);
+  cursor: pointer;
+}
+
+.dashboard__selector__item--active,
+.dashboard__selector__item:hover {
+  color: white;
+}
+
+.dashboard__item {
+  border-radius: var(--border-def);
+  background-repeat: no-repeat;
+  padding-top: 2.2rem;
+  background-position: 90% -10%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dashboard__item--work {
+  background-color: var(--color-red-100);
+  background-image: url('./images/icon-work.svg');
+}
+
+.dashboard__item--play {
+  background-color: var(--color-blue-200);
+  background-image: url('./images/icon-play.svg');
+}
+
+.dashboard__item--study {
+  background-color: var(--color-red-200);
+  background-image: url('./images/icon-study.svg');
+}
+
+.dashboard__item--exercise {
+  background-color: var(--color-green-100);
+  background-image: url('./images/icon-exercise.svg');
+}
+
+.dashboard__item--social {
+  background-color: var(--color-violet-100);
+  background-image: url('./images/icon-social.svg');
+}
+
+.dashboard__item--self-care {
+  background-color: var(--color-orange-100);
+  background-image: url('./images/icon-self-care.svg');
+}
+
+.tracking-card {
+  background-color: var(--color-blue-500);
+  padding: var(--card-padding-def);
+  border-radius: var(--border-def);
+  position: relative;
+  bottom: -2px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.tracking-card__header,
+.tracking-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tracking-card__name {
+  font-weight: 400;
+  font-size: var(--fs-base);
+  margin: 0;
+  margin-bottom: 0.7rem;
+}
+
+.tracking-card__time {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.tracking-card__prev-time {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-blue-300);
+}
+
+.tracking-card__menu {
+  cursor: pointer;
+}
+
+.tracking-card__menu:hover {
+  filter: brightness(1.5);
+}
+
+.dashboard__item:hover .tracking-card {
+  background-color: var(--color-blue-400);
+}
+
+@media (min-width: 1024px) {
+  .dashboard__content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dashboard__person {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboard__selector {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+
+    flex-grow: 1;
+  }
+  .info__title {
+    font-size: 32px;
+  }
+
+  .tracking-card__info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tracking-card__name {
+    margin-bottom: 1rem;
+  }
+  .tracking-card__time {
+    font-size: 38px;
+  }
+}
