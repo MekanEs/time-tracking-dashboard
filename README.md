@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-[Live Site URL]([https://your-live-site-url.com](https://mekanes.github.io/time-tracking-dashboard/))
+[Live Site URL](https://mekanes.github.io/time-tracking-dashboard)
 
 ### Built with
 
